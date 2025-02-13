@@ -16,20 +16,20 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const AdminJobsTable = () => {
   const { companies, searchCompanyByText} = useSelector((store) => store.company);
-  const {allAdminJobs} = useSelector((store) => store.job);
+  const {allAdminJobs,searchJobByText} = useSelector((store) => store.job);
   const navigate = useNavigate();
   const [filterJobs, setFilterJobs] = useState(allAdminJobs);
 
   useEffect(()=>{
     const filteredJob = allAdminJobs.length >= 0 && allAdminJobs.filter((job)=>{
-        if(!searchCompanyByText){
+        if(!searchJobByText){
             return true
         };
-        return company?.name?.toLowerCase().includes(searchCompanyByText.toLowerCase());
+        return job?.tittle?.toLowerCase().includes(searchJobByText.toLowerCase()) || job?.company?.name.toLowerCase().includes(searchJobByText.toLowerCase()) ;
 
     });
     setFilterJobs(filteredJob);
-},[companies,searchCompanyByText])
+},[allAdminJobs,searchJobByText])
 
   return (
     <div>
