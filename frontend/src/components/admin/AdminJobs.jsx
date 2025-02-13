@@ -30,7 +30,7 @@ const AdminJobs = () => {
           />
           <Button
             onClick={() => navigate("/admin/companies/create")}
-            className="bg-[#3886c2] hover:bg-[#2e648e]"
+            className="bg-[#3886c2] "
           >
            Post New Job
           </Button>
