@@ -1,4 +1,4 @@
-# Job Portal - MERN Stack
+# JobLoom - MERN Stack Job Portal Project
 ![Screenshot (224)](https://github.com/user-attachments/assets/0fe81483-f94b-4f61-b7d2-21479ff6a8ab)
 
 
