@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "@/redux/authSlice";
 import store from "@/redux/store";
 import { Loader2 } from "lucide-react";
+import Footer from "../shared/Footer";
 
 const Login = () => {
     const [input, setInput] = useState({
@@ -112,6 +113,9 @@ const Login = () => {
           }
           <span className="text-sm">Don't have an account? <Link to="/signup" className="text-blue-500">Sign Up</Link></span>
         </form>
+      </div>
+      <div className="mt-20">
+        <Footer/>
       </div>
     </div>
   );
