@@ -22,7 +22,7 @@ const PostJob = () => {
   return (
     <div>
       <Navbar />
-      <div className="felx items-center justify-center max-w-4xl mx-auto my-5">
+      <div className="felx items-center justify-center max-w-4xl mx-auto my-6">
           <form action="" className="p-8 max-w-4xl border-gray-200 shadow-lg rounded-md">
           <div className="grid grid-cols-2 gap-2">
             <div>
