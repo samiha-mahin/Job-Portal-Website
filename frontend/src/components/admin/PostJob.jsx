@@ -106,6 +106,7 @@ const PostJob = () => {
               />
             </div>
             </div>
+            <Button className="w-1/2 mt-5">Post New Job</Button>
           </form>
       </div>
     </div>
