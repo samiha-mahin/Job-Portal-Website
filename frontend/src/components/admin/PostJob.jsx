@@ -3,6 +3,18 @@ import Navbar from "../shared/Navbar";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { useSelector } from "react-redux";
+import store from "@/redux/store";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+
+const companyArray = [];
 
 const PostJob = () => {
   const [input, setInput] = useState({
@@ -16,14 +28,19 @@ const PostJob = () => {
     position: 0,
     companyId: "",
   });
+  const { companies } = useSelector((store) => store.company);
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
+ 
   return (
     <div>
       <Navbar />
       <div className="felx items-center justify-center max-w-4xl mx-auto my-6">
-          <form action="" className="p-8 max-w-4xl border-gray-200 shadow-lg rounded-md">
+        <form
+          action=""
+          className="p-8 max-w-4xl border-gray-200 shadow-lg rounded-md"
+        >
           <div className="grid grid-cols-2 gap-2">
             <div>
               <Label>Tittle</Label>
@@ -105,9 +122,30 @@ const PostJob = () => {
                 className="focus-visible:ring-offset-0 focus-visible:ring-0 my-1"
               />
             </div>
-            </div>
-            <Button className="w-1/2 mt-5">Post New Job</Button>
-          </form>
+            {companies.length >= 0 && (
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a Company" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    {companies.map((company) => {
+                      return (
+                        <SelectItem value="company">{company.name}</SelectItem>
+                      )
+                    })}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            )}
+          </div>
+          <Button className="w-full  mt-5">Post New Job</Button>
+          {companies.length === 0 && (
+            <p className="text-xs text-red-600 font-bold text-center my-3">
+              *Please register a comapny first before posting a job
+            </p>
+          )}
+        </form>
       </div>
     </div>
   );
