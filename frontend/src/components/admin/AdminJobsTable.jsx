@@ -10,7 +10,7 @@ import {
 } from "../ui/table";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Edit2, MoreHorizontal, Search } from "lucide-react";
+import { Edit2, Eye, MoreHorizontal, Search } from "lucide-react";
 import { useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -56,7 +56,7 @@ const AdminJobsTable = () => {
                     <MoreHorizontal />
                   </PopoverTrigger>
                   <PopoverContent className="w-32">
-                    <div className="flex items-center gap-2 w-fit cursor-pointer">
+                    <div className="flex flex-col items-center gap-2 w-fit cursor-pointer">
                       <div
                         onClick={() =>
                           navigate(`/admin/jobs/${job._id}`)
@@ -65,6 +65,10 @@ const AdminJobsTable = () => {
                       >
                         <Edit2 className="w-4" />
                         <span>Edit</span>
+                      </div>
+                      <div onClick={()=>navigate(`/admin/jobs/${job._id}/applicants`)} className="flex items-center w-fit cursor-pointer gap-2 mt-2">
+                        <Eye className="w-4"/>
+                        <span>Applicants</span>
                       </div>
                     </div>
                   </PopoverContent>
