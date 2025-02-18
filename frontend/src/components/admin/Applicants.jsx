@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../shared/Navbar'
 import ApplicantsTable from './ApplicantsTable'
+import axios from 'axios'
+import { APPLICATION_API } from '@/utils/constant'
+import { useParams } from 'react-router-dom'
 
 const Applicants = () => {
+  const params = useParams();
+  useEffect(()=>{
+    const fetchAllApplication = async () => {
+      try {
+        const res = await axios.get(`${APPLICATION_API}/${params.id}/applicants`,{withCredentials:true});
+        if(res.data.success){
+          
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  },[])
   return (
     <div>
       <Navbar/>
