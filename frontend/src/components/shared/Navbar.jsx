@@ -44,7 +44,7 @@ const Navbar = () => {
           <ul className="flex items-center font-medium gap-5">
             {user && user.role === "recruiter" ? (
               <>
-                <Link to="admin/companies">
+                <Link to="/admin/companies">
                   <li>Companies</li>
                 </Link>
                 <Link to="/admin/jobs">
