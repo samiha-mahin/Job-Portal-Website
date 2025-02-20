@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Search } from "lucide-react";
 
 const Hero = () => {
+  const [query, setQuery] = useState("");
+  const searchJobHandler = ()=>{}
   return (
     <div className="text-center">
       <div className="flex flex-col gap-5 my-10">
@@ -23,7 +25,7 @@ const Hero = () => {
             placeholder="Find Your Dream Jobs"
             className="outline-none border-none w-full"
           />
-          <Button className="rounded-r-full bg-[#3886c2] hover:bg-[#2e648e]">
+          <Button onClick={searchJobHandler} className="rounded-r-full bg-[#3886c2] hover:bg-[#2e648e]">
             <Search className="h-5 w-5" />
           </Button>
         </div>

@@ -13,6 +13,8 @@ import CompanySetup from "./components/admin/CompanySetup";
 import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from "./components/admin/PostJob"
 import Applicants from "./components/admin/Applicants";
+import Help from "./components/Help";
+import AdminHelp from "./components/admin/AdminHelp";
 
 const App = () => {
   return (
@@ -25,12 +27,14 @@ const App = () => {
           <Route path="/jobs" element={<Jobs/>}/>
           <Route path="/browse" element={<Browse/>}/>
           <Route path="/profile" element={<Profile/>} />
+          <Route path="/help" element={<Help/>} />
           <Route path="/description/:id" element={<JobDescription/>}/> 
            //admin routes
           <Route path="/admin/companies" element={<Companies/>}/>
           <Route path="/admin/companies/create" element={<CompanyCreate/>}/>
           <Route path="/admin/companies/:id" element={<CompanySetup/>}/>
           <Route path="/admin/jobs" element={<AdminJobs/>}/>
+          <Route path="/admin/help" element={<AdminHelp/>}/>
           <Route path="/admin/jobs/create" element={<PostJob/>}/>
           <Route path="/admin/jobs/:id/applicants" element={<Applicants/>}/>
         </Routes>
