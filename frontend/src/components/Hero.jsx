@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Search } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setSearchedQuery } from "@/redux/jobSlice";
 
 const Hero = () => {
   const [query, setQuery] = useState("");
-  const searchJobHandler = ()=>{}
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const searchJobHandler = ()=>{
+    dispatch(setSearchedQuery(query));
+    navigate("/browse")
+  }
   return (
     <div className="text-center">
       <div className="flex flex-col gap-5 my-10">
