@@ -13,6 +13,7 @@ import CompanySetup from "./components/admin/CompanySetup";
 import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from "./components/admin/PostJob"
 import Applicants from "./components/admin/Applicants";
+import ProtectedRoute from "./components/admin/ProtectedRoute";
 const App = () => {
   return (
     <>
@@ -24,10 +25,9 @@ const App = () => {
           <Route path="/jobs" element={<Jobs/>}/>
           <Route path="/browse" element={<Browse/>}/>
           <Route path="/profile" element={<Profile/>} />
-          <Route path="/help" element={<Help/>} />
           <Route path="/description/:id" element={<JobDescription/>}/> 
            //admin routes
-          <Route path="/admin/companies" element={<Companies/>}/>
+          <Route path="/admin/companies" element={<ProtectedRoute><Companies/></ProtectedRoute>}/>
           <Route path="/admin/companies/create" element={<CompanyCreate/>}/>
           <Route path="/admin/companies/:id" element={<CompanySetup/>}/>
           <Route path="/admin/jobs" element={<AdminJobs/>}/>
