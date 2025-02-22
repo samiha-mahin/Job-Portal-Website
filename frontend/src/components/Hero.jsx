@@ -15,7 +15,7 @@ const Hero = () => {
     navigate("/browse")
   }
   return (
-    <div  className="h-[80vh] flex items-center justify-center bg-cover bg-center"
+    <div  className="h-[80vh] w-[85%] mx-auto flex items-center justify-center bg-cover bg-center rounded-3xl"
     style={{ backgroundImage: "url('/images/blue.jpg')" }}>
       <div className="flex flex-col items-center gap-5 my-10">
         <span className="mx-auto px-4 py-2 rounded-full text-center bg-gray-100 text-[#3886c2] font-medium">
