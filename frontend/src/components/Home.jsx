@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import About from './About'
 import ReviewSection from './ReviewSection'
+import Article from './Article'
 
 const Home = () => {
   useGetAllJobs();
@@ -27,6 +28,7 @@ const Home = () => {
        <Category/>
        <Latest_jobs/>
        <About/>
+       <Article/>
        <ReviewSection/>
        <Footer/>
     </div>

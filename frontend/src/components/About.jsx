@@ -20,7 +20,6 @@ const About = () => {
           </p>
         </div>
       </div>
-
       <section className="w-[85%] mx-auto px-4">
         <div className="relative w-full h-0 pb-[56.25%]">
           {" "}
