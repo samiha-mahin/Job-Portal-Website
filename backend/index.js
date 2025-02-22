@@ -17,7 +17,7 @@ dotenv.config({});
  app.use(cookieParser()); //Parses cookies from incoming HTTP requests
 
  const corsOptions = {
-   origin: 'https://job-portal-website-front-end-e72p-6h93luulk.vercel.app/', // Frontend URL
+   origin: 'https://job-portal-website-front-end-e72p.vercel.app/', // Frontend URL
    credentials: true, // Ensures cookies are sent
  };
  app.use(cors(corsOptions));
