@@ -8,7 +8,7 @@ import store from '@/redux/store';
 const Latest_jobs = () => {
   const {allJobs} = useSelector(store=>store.job)
   return (
-    <div className="flex flex-col items-center max-w-7xl mx-auto my-20 px-4">
+    <div className="flex flex-col items-center max-w-7xl mx-auto my-10 px-4">
     <h1 className="text-3xl font-bold my-10 text-center">
       <span className="text-[#3886c2]">Latest & Top</span> Job Opening
     </h1>
