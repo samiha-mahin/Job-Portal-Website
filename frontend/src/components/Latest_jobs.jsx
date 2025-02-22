@@ -10,7 +10,7 @@ const Latest_jobs = () => {
   return (
     <div className='max-w-7xl mx-auto my-20'>
         <h1 className='text-3xl font-bold'><span className='text-[#3886c2]'>Latest & Top</span> Job Opening</h1>
-        <div className='grid grid-cols-3 gap-4 my-5'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-5'>
             {
 
             allJobs.length <= 0 ? <span>No Jobs Aavailabe</span> : allJobs?.slice(0,6).map((job) =><JobCards key={job._id} job={job}/> )
