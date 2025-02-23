@@ -63,7 +63,7 @@ const Article = () => {
   {/* Image Section */}
   <div className="w-full md:w-1/2 h-64 md:h-auto">
     <img
-      src="/images/blue.jpg"
+      src="/images/Article.png"
       alt="Dream Job"
       className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none shadow-lg"
     />

@@ -19,7 +19,7 @@ const Hero = () => {
       className="h-[70vh] md:h-[80vh] w-[90%] md:w-[85%] mx-auto flex items-center justify-center 
     bg-cover md:bg-cover bg-center rounded-3xl px-4"
       style={{
-        backgroundImage: "url('/images/blue.jpg')",
+        backgroundImage: "url('/images/hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

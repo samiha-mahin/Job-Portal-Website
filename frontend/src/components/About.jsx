@@ -9,7 +9,7 @@ const About = () => {
         </h1>
         <div className="flex flex-col md:flex-row items-center gap-5">
           <img
-            src="/images/blue.jpg"
+            src="/images/About.png"
             alt="Dream Job"
             className="w-full md:w-1/2 max-w-md rounded-lg shadow-lg"
           />
