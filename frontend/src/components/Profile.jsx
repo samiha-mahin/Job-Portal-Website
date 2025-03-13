@@ -25,7 +25,7 @@ const Profile = () => {
         <div className="flex justify-between">
           <div className="flex items-center gap-4">
             <Avatar className="h-24 w-24">
-              <AvatarImage src="https://www.lawyersandsettlements.com/blog/wp-content/uploads/2018/02/G-300x300.png" />
+              <AvatarImage src={user?.profile?.profilePhoto}/>
             </Avatar>
             <div>
               <h1 className="text-xl font-medium">{user?.fullname}</h1>
