@@ -18,7 +18,7 @@ dotenv.config({});
 
  const corsOptions = {
    // origin: 'http://localhost:5173',
-    origin: 'https://job-portal-website-front-end-e72p.vercel.app', // Frontend URL
+    origin: 'https://job-portal-website-front-end.vercel.app', // Frontend URL
    credentials: true, // Ensures cookies are sent
  };
  app.use(cors(corsOptions));
