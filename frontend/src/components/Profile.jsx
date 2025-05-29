@@ -8,79 +8,86 @@ import { Label } from "./ui/label";
 import AppliedJobTable from "./AppliedJobTable";
 import UpdateProfileDialog from "./UpdateProfileDialog";
 import { useSelector } from "react-redux";
-import store from "@/redux/store";
 import useGetAppliedJobs from "@/hooks/useGetAppliedJob";
 
-// const skills = ["html", "css", "JS", "react"];
 const isResume = true;
 
 const Profile = () => {
- useGetAppliedJobs();
+  useGetAppliedJobs();
   const [open, setOpen] = useState(false);
   const { user } = useSelector((store) => store.auth);
+
   return (
     <div>
       <Navbar />
-      <div className="max-w-4xl mx-auto bg-white border border-gray-300 rounded-2xl my-5 p-8">
-        <div className="flex justify-between">
-          <div className="flex items-center gap-4">
-            <Avatar className="h-24 w-24">
-              <AvatarImage src={user?.profile?.profilePhoto}/>
+      <div className="max-w-4xl mx-auto bg-white border border-gray-300 rounded-2xl my-5 px-4 py-6 md:p-6">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Avatar className="h-20 w-20 md:h-24 md:w-24">
+              <AvatarImage src={user?.profile?.profilePhoto} />
             </Avatar>
-            <div>
-              <h1 className="text-xl font-medium">{user?.fullname}</h1>
-              <p className="text-gray-600">{user?.profile?.bio}</p>
+            <div className="text-center sm:text-left">
+              <h1 className="text-lg md:text-xl font-medium">{user?.fullname}</h1>
+              <p className="text-gray-600 text-sm">{user?.profile?.bio}</p>
             </div>
           </div>
-          <Button
-            onClick={() => setOpen(true)}
-            className="text-right"
-            variant="outline"
-          >
-            <Pen />
-          </Button>
+          <div className="flex justify-end">
+            <Button
+              onClick={() => setOpen(true)}
+              className="text-right"
+              variant="outline"
+            >
+              <Pen />
+            </Button>
+          </div>
         </div>
-        <div className="my-5">
-          <div className="flex items-center gap-3 my-2">
-            <Mail />
+
+        <div className="my-6 space-y-3 text-sm md:text-base">
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4" />
             <span>{user?.email}</span>
           </div>
-          <div className="flex items-center gap-3 my-2">
-            <Contact />
+          <div className="flex items-center gap-2">
+            <Contact className="w-4 h-4" />
             <span>{user?.phoneNumber}</span>
           </div>
         </div>
-        <div>
-          <h1 className="text-xl font-medium">Skills</h1>
-          <div className="flex items-center gap-1">
+
+        <div className="mt-6">
+          <h1 className="text-lg md:text-xl font-medium mb-2">Skills</h1>
+          <div className="flex flex-wrap gap-2">
             {user?.profile?.skills.length !== 0 ? (
-              user?.profile?.skills.map((items, index) => (
-                <Badge key={index}> {items} </Badge>
+              user?.profile?.skills.map((item, index) => (
+                <Badge key={index}> {item} </Badge>
               ))
             ) : (
-              <p>N/A</p>
+              <p className="text-sm text-gray-500">N/A</p>
             )}
           </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5 ">
+
+          <div className="grid w-full max-w-sm items-start gap-1.5 mt-5">
             <Label className="text-md font-bold">Resume</Label>
             {isResume && user?.profile?.resume ? (
               <a
-                target="_blank" // Fixed attribute syntax
-                href={user.profile.resume} // Ensured proper reference
-                className="text-blue-500 w-full hover:underline cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={user.profile.resume}
+                className="text-blue-500 hover:underline break-words"
               >
                 {user.profile.resumeOriginalName || "Download Resume"}
               </a>
             ) : (
-              <p>No resume available</p> // Added a meaningful fallback text
+              <p className="text-sm text-gray-500">No resume available</p>
             )}
           </div>
         </div>
       </div>
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl">
-        <h1 className="text-2xl font-medium my-5 p-3">Applied Jobs</h1>
+
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl p-4 md:p-6">
+        <h1 className="text-lg md:text-2xl font-medium mb-4">Applied Jobs</h1>
         <AppliedJobTable />
       </div>
+
       <UpdateProfileDialog open={open} setOpen={setOpen} />
     </div>
   );
