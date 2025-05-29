@@ -121,7 +121,7 @@ const Signup = () => {
           </div>
 
           <div className="flex items-center justify-between my-5">
-            <RadioGroup className="flex items-center gap-4">
+            <RadioGroup className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex items-center space-x-2">
                 <Input
                   type="radio"
