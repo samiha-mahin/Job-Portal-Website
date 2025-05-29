@@ -1,4 +1,5 @@
 import React from "react";
+import Mapbox from "./Mapbox";
 
 const About = () => {
   return (
@@ -20,19 +21,12 @@ const About = () => {
           </p>
         </div>
       </div>
-      <section className="w-[85%] mx-auto px-4">
-        <div className="relative w-full h-0 pb-[56.25%]">
-          {" "}
-          {/* Aspect ratio 16:9 */}
-          <iframe
-            className="absolute top-0 left-0 w-full h-full p-10"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59038.35288551073!2d91.74500724863283!3d22.357515599999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8906edac245%3A0x5be1258bce3f55b!2sYunusco%20City%20Centre!5e0!3m2!1sen!2sbd!4v1731519739662!5m2!1sen!2sbd"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </section>
+      <h1 className="text-4xl font-bold my-5 text-center">
+          Select <span className="text-[#3886c2]">Location</span>
+        </h1>
+     <div className="w-[85%] mx-auto px-4">
+      <Mapbox/>
+     </div>
     </div>
   );
 };
