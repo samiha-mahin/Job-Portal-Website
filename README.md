@@ -12,10 +12,11 @@ A full-stack Job Portal application built using the MERN (MongoDB, Express.js, R
 - Job search and filtering for job seekers
 - Application tracking system
 - Responsive UI design
+- Integrated Leaflet.js for location-based job listings
 
 ## Tech Stack
 
-- **Frontend:** React.js, Tailwind CSS
+- **Frontend:** React.js, Tailwind CSS ,Leaflet
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Authentication:** JWT (JSON Web Token)
