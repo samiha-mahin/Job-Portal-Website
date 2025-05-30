@@ -120,9 +120,10 @@ const Signup = () => {
             />
           </div>
 
-          <div className="flex items-center justify-between my-5">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 my-5">
+            {/* Radio Buttons */}
             <RadioGroup className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center">
                 <Input
                   type="radio"
                   name="role"
@@ -133,7 +134,7 @@ const Signup = () => {
                 />
                 <Label htmlFor="option-one">Student</Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center">
                 <Input
                   type="radio"
                   name="role"
@@ -146,7 +147,8 @@ const Signup = () => {
               </div>
             </RadioGroup>
 
-            <div className="flex flex-col sm:flex-row items-center gap-2 pl-3">
+            {/* File Upload */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
               <Label className="text-gray-500 font-bold">Profile</Label>
               <Input
                 accept="image/*"

@@ -22,8 +22,8 @@ const About = () => {
         </div>
       </div>
       <h1 className="text-4xl font-bold my-5 text-center">
-          Select <span className="text-[#3886c2]">Location</span>
-        </h1>
+          Job In Your Nearest <span className="text-[#3886c2]">Location</span>
+      </h1>
      <div className="w-[85%] mx-auto px-4">
       <Mapbox/>
      </div>

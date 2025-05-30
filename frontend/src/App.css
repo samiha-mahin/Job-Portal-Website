@@ -1,4 +1,6 @@
 /* App.css */
+@import url('leaflet/dist/leaflet.css');
+
 
 /* Hide scrollbar for all elements */
 *::-webkit-scrollbar {
@@ -8,4 +10,14 @@
 * {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
+}
+
+/* Prevent X-axis tilt and overflow */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transform: none !important;
+  perspective: none !important;
+  backface-visibility: visible !important;
 }

@@ -34,9 +34,9 @@ const Article = () => {
   return (
     <div className="w-[90%] md:w-[70%] mx-auto">
       <div className="mt-10 text-left">
-        <h3 className="text-2xl font-semibold mb-4 my-10">
-          Latest Job Articles
-        </h3>
+        <h1 className="text-4xl font-bold my-5 text-center">
+          Latest Job <span className="text-[#3886c2]">Article</span>
+        </h1>
         <Carousel className="w-full max-w-6xl mx-auto my-10">
           <CarouselContent className="flex gap-4">
             {jobArticles.map((article, index) => (

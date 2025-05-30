@@ -16,7 +16,7 @@ dotenv.config();
 const app = express();
 
 // Connect to DB
-connectDB();
+// connectDB();
 
 // Middlewares
 app.use(express.json());
@@ -24,9 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: "*", // allow any origin
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  origin: "http://localhost:5173",
+  //origin: "https://job-portal-website-front-end-e72p.vercel.app",
+  credentials: true,
 };
 app.use(cors(corsOptions));
 
@@ -38,3 +38,9 @@ app.use("/api/v1/app", applicationRoute);
 
 // Export the serverless handler
 export const handler = serverless(app);
+
+const PORT = process.env.PORT || 3000;
+ app.listen (PORT,()=>{
+    connectDB();
+    console.log(`Server Running at Port ${PORT}`);
+ });
