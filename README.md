@@ -1,5 +1,5 @@
 # JobLoom - MERN Stack Job Portal Project
-![Screenshot (224)](https://github.com/user-attachments/assets/0fe81483-f94b-4f61-b7d2-21479ff6a8ab)
+![Screenshot (253)](https://github.com/user-attachments/assets/cd63032a-7e80-432a-a6a5-9e6322f524e9)
 
 
 A full-stack Job Portal application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. This project provides job seekers with the ability to search for jobs and apply, while employers can post job listings and manage applications.
@@ -12,10 +12,11 @@ A full-stack Job Portal application built using the MERN (MongoDB, Express.js, R
 - Job search and filtering for job seekers
 - Application tracking system
 - Responsive UI design
+- Integrated Leaflet.js for location-based job listings
 
 ## Tech Stack
 
-- **Frontend:** React.js, Tailwind CSS
+- **Frontend:** React.js, Tailwind CSS ,Leaflet
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Authentication:** JWT (JSON Web Token)
